@@ -42,8 +42,8 @@ fail_times = []
 success_times = []
 time_to_first_success = []
 
-schema_file = 'cedar-restrict-case-studies/dist/GClassroom/gclassroom.schema.json'
-policy_file = "cedar-restrict-case-studies/dist/GClassroom/policies.cedar"
+schema_file = 'gclassroom.schema.json'
+policy_file = "gclassroom.cedar"
 
 entity_file = f"{args.entities_prefix}.{size}.json"
 with open(policy_file) as f:
