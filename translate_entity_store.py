@@ -1238,33 +1238,11 @@ def solve(entity_schema, actions, action_scope, hierarchy, entity_store_json, lo
 
     # return
     if (slv.checkSynth().hasSolution()):
-        # pretty_print_str_with_brackets(str(slv.getSynthSolutions([policies])[0]))
-        with open(f"sols/sol", "a") as f:
-            pretty_print_str_with_brackets(str(grammar), out=f)
-            pretty_print_str_with_brackets(str(slv.getSynthSolutions([policies])[0]), out=f)
-            f.write("\n")
-            f.write(str(datetime.datetime.now()) + "\n")
-
-            s = slv.simplify(slv.getSynthSolutions([policies])[0])
-            # s = slv.getSynthSolutions([policies])[0]
-            # print(slv.simplify(slv.getSynthSolutions([policies])[0]))
-            unparser = Unparser(entity_type_map, entity_map_flat)
-            # print(unparser.rule_to_str(s))
-            f.write("unparsed: \n")
-            f.write(unparser.rule_to_str(s))
-            f.write("\n")
-
+        s = slv.simplify(slv.getSynthSolutions([policies])[0])
+        unparser = Unparser(entity_type_map, entity_map_flat)
         print(f"Solved")
-
-        sols = []
         sol = unparser.rule_to_str(s)
-        # return unparser.rule_to_str(s)
-        while (slv.checkSynthNext().hasSolution()):
-            # pretty_print_str_with_brackets(str(slv.getSynthSolutions([policies])[0]))
-            s = slv.simplify(slv.getSynthSolutions([policies])[0])
-            sols.append(unparser.rule_to_str(s))
-            # print("We found another one")
-        print(sols)
+       
         return sol
 
     else:
