@@ -30,6 +30,7 @@ Will run RESTRICTER on the classroom management case study where the entity stor
 
 ## Structure
 
+```
 .
 ├── README.md
 ├── cedar2json-0.2.0-cp38-abi3-manylinux_2_34_x86_64.whl
@@ -43,6 +44,7 @@ Will run RESTRICTER on the classroom management case study where the entity stor
 ├── restricter-case-study-gclass.py
 ├── translate_entity_store.py
 └── util.py
+```
 
 `restricter-case-study-gclass.py` is the script that runs the classroom management case study, which contains the main algorithm of RESTRICTER.
 
